@@ -18,7 +18,7 @@ makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
         
         ## Setter for the input matrix.
-        ## Each time this is set clear the inverse matrix
+        ## Each time this is set clear the inverse matrix cache
         set <- function(y){
                 x <<- y
                 inv <<- NULL
