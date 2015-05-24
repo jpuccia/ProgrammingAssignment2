@@ -14,14 +14,26 @@
 ##      and a setter and getter (setinv(matinv), getinv()) for the inverse of the matrix parameter.
 ##
 makeCacheMatrix <- function(x = matrix()) {
+        ## Initialize the inverse matrix to NULL
         inv <- NULL
+        
+        ## Setter for the input matrix.
+        ## Each time this is set clear the inverse matrix
         set <- function(y){
                 x <<- y
                 inv <<- NULL
         }
+        
+        ## Getter for the input matrix
         get <- function() x
+        
+        ## Setter for the inverse matrix
         setinv <- function(matinv) inv <<- matinv
+        
+        ## Getter for the inverse matrix
         getinv <- function() inv
+        
+        ## Return a list of setters and getters for the source and inverse matricies
         list(set = set, get = get, setinv = setinv, getinv = getinv)
 }
 
